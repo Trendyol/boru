@@ -8,6 +8,15 @@ class PipelineBuilder<TContext : PipelineContext> {
         return this
     }
 
+    fun map(condition: Func<TContext, Boolean>, configuration: PipelineBuilder<TContext>.() -> Unit): PipelineBuilder<TContext> {
+        val branchBuilder = this.new()
+        configuration(branchBuilder)
+        val branch = branchBuilder.build()
+
+        val options = MapOptions(condition, branch)
+        return this.use { next -> MapPipelineStep(next, options)::execute }
+    }
+
     fun build(): Pipeline<TContext> {
         var step: PipelineStepDelegate<TContext> = { _ -> }
 
@@ -21,4 +30,10 @@ class PipelineBuilder<TContext : PipelineContext> {
     fun new(): PipelineBuilder<TContext> {
         return PipelineBuilder()
     }
+}
+
+suspend fun <TContext : PipelineContext> pipelineBuilder(init: suspend PipelineBuilder<TContext>.() -> Unit): Pipeline<TContext> {
+    val builder = PipelineBuilder<TContext>()
+    init.invoke(builder)
+    return builder.build()
 }

@@ -12,8 +12,8 @@ class MapPipelineStepTests {
         runBlocking {
             //given
             val pipeline = PipelineBuilder<TestDataContext>()
-                .map({ it.intValue == 1 }) { builder ->
-                    builder.usePipelineStep(TestWriterStep("one"))
+                .map({ it.intValue == 1 }) {
+                    usePipelineStep(TestWriterStep("one"))
                 }.build()
 
             val firstContext = TestDataContext().apply {
@@ -37,13 +37,23 @@ class MapPipelineStepTests {
         }
     }
 
+    fun test() {
+        runBlocking {
+            val a = pipelineBuilder<TestDataContext> {
+                map({ false }) {
+
+                }
+            }
+        }
+    }
+
     @Test
     fun `should execute different pipelines in different branches`() {
         runBlocking {
             //given
             val pipeline = PipelineBuilder<TestDataContext>()
-                .map({ context -> context.intValue == 1 }) { builder ->
-                    builder.usePipelineStep(TestWriterStep("one"))
+                .map({ context -> context.intValue == 1 }) {
+                    usePipelineStep(TestWriterStep("one"))
                 }.use { context: TestDataContext, next: suspend () -> Unit ->
                     context.items["Finished"] = true
                     next()
@@ -80,11 +90,11 @@ class MapPipelineStepTests {
                     context.items["user"] = "bilal.kilic"
                     next()
                 }
-                .map({ context -> context.intValue == 1 }) { builder ->
-                    builder.usePipelineStep(TestWriterStep("one"))
+                .map({ context -> context.intValue == 1 }) {
+                    usePipelineStep(TestWriterStep("one"))
                 }
-                .map({ context -> context.intValue == 2 }) { builder ->
-                    builder.usePipelineStep(TestWriterStep("two"))
+                .map({ context -> context.intValue == 2 }) {
+                    usePipelineStep(TestWriterStep("two"))
                 }.build()
 
             val firstContext = TestDataContext().apply {

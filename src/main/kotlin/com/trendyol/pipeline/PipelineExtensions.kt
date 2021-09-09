@@ -1,6 +1,6 @@
 package com.trendyol.pipeline
 
-suspend fun <TContext : PipelineContext> PipelineBuilder<TContext>.use(step: suspend (TContext, suspend () -> Unit) -> Unit): PipelineBuilder<TContext> {
+suspend fun <TContext : PipelineContext> PipelineBuilder<TContext>.use(step: suspend (TContext, next: suspend () -> Unit) -> Unit): PipelineBuilder<TContext> {
     return this.use { next ->
         { context ->
             val simpleNextStep = suspend { next(context) }
@@ -10,7 +10,7 @@ suspend fun <TContext : PipelineContext> PipelineBuilder<TContext>.use(step: sus
 }
 
 @JvmName("useTContext")
-suspend fun <TContext : PipelineContext> PipelineBuilder<TContext>.use(step: suspend (TContext, suspend (TContext) -> Unit) -> Unit): PipelineBuilder<TContext> {
+suspend fun <TContext : PipelineContext> PipelineBuilder<TContext>.use(step: suspend (TContext, next: suspend (TContext) -> Unit) -> Unit): PipelineBuilder<TContext> {
     return this.use { next ->
         { context ->
             val simpleNextStep: suspend (TContext) -> Unit = { c: TContext -> next(c) }
@@ -35,33 +35,6 @@ fun <TContext : PipelineContext> PipelineBuilder<TContext>.usePipelineStep(step:
     return this.use { next ->
         { context ->
             step.execute(context, next)
-        }
-    }
-}
-
-fun <TContext : PipelineContext> PipelineBuilder<TContext>.map(condition: Func<TContext, Boolean>, configuration: (PipelineBuilder<TContext>) -> Unit): PipelineBuilder<TContext> {
-    val branchBuilder = this.new()
-    configuration(branchBuilder)
-    val branch = branchBuilder.build()
-
-    val options = MapOptions(condition, branch)
-    return this.use { next -> MapPipelineStep(next, options)::execute }
-}
-
-data class MapOptions<TContext : PipelineContext>(
-    val condition: Func<TContext, Boolean>,
-    val branch: Pipeline<TContext>,
-)
-
-class MapPipelineStep<TContext : PipelineContext>(
-    private val next: PipelineStepDelegate<TContext>,
-    private val options: MapOptions<TContext>,
-) {
-    suspend fun execute(context: TContext) {
-        if (options.condition(context)) {
-            options.branch.execute(context)
-        } else {
-            next(context)
         }
     }
 }
