@@ -1,4 +1,5 @@
-# boru
+# boru [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.trendyol/boru/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser) ![Release boru](https://github.com/Trendyol/boru/actions/workflows/release.yml/badge.svg)
+
 
 ![boru](https://user-images.githubusercontent.com/21153996/133256800-8d51f5e5-1cc5-45d2-a195-28e95f1cb92c.jpeg)
 
@@ -6,7 +7,7 @@ boru is a pipeline implementation in kotlin with native coroutine support and cu
 
 Supports chaining pipeline steps with conditions and branches.
 
-Inspired by [@oguzhaneren](https://github.com/oguzhaneren) 's C# implementation
+Inspired by [@oguzhaneren](https://github.com/oguzhaneren)'s C# implementation
 
 
 ```
