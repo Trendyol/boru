@@ -1,5 +1,8 @@
 # boru
 
+![Alt text](https://ibb.co/b3Jbx64?raw=true "Boru")
+
+
 boru is a pipeline implementation in kotlin with native coroutine support and custom dsl.
 
 Supports chaining pipeline steps with conditions and branches
