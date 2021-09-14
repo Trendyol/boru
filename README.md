@@ -1,6 +1,6 @@
 # boru
 
-![Boru](https://pasteboard.co/9U3R6jlnsje5.jpg)
+![boru](https://user-images.githubusercontent.com/21153996/133256800-8d51f5e5-1cc5-45d2-a195-28e95f1cb92c.jpeg)
 
 boru is a pipeline implementation in kotlin with native coroutine support and custom dsl.
 
