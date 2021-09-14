@@ -15,6 +15,21 @@
         <junit.version>5.7.2</junit.version>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Oğuzhan Eren</name>
+            <url>https://github.com/oguzhaneren</url>
+            <organization>Trendyol</organization>
+            <organizationUrl>https://github.com/trendyol</organizationUrl>
+        </developer>
+        <developer>
+            <name>Bilal Kılıç</name>
+            <url>https://github.com/bilal-kilic/</url>
+            <organization>Trendyol</organization>
+            <organizationUrl>https://github.com/trendyol</organizationUrl>
+        </developer>
+    </developers>
+
     <pluginRepositories>
         <pluginRepository>
             <id>jcenter</id>
