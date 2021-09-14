@@ -9,6 +9,8 @@
     <version>1.0.0</version>
 
     <name>com.trendyol.boru</name>
+    <description>boru is a pipeline implementation in kotlin with native coroutine support and custom dsl.</description>
+    <url>https://github.com/Trendyol/kediatR</url>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
@@ -93,6 +95,7 @@
     </dependencies>
 
     <profiles>
+        <!-- Deployment profile (required so these plugins are only used when deploying) -->
         <profile>
             <id>deploy</id>
             <build>
@@ -123,6 +126,24 @@
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>empty-javadoc-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <classifier>javadoc</classifier>
+                                    <classesDirectory>${basedir}/javadoc</classesDirectory>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
