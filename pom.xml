@@ -8,6 +8,8 @@
     <artifactId>boru</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>com.trendyol.boru</name>
+
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
@@ -33,7 +35,7 @@
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
-            <url>https://github.com/Trendyol/kediatR/blob/master/LICENCE</url>
+            <url>https://github.com/Trendyol/boru/blob/master/LICENCE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
