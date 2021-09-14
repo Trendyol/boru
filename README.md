@@ -124,3 +124,6 @@ fun composeMapping() {
     }
 }
 ```
+
+## Examples
+You can check out other [examples](/examples)
