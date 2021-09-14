@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 data class MapOptions<TContext : PipelineContext>(
     val condition: Func<TContext, Boolean>,

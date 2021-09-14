@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 class Pipeline<TContext>(
     private val pipelineStepDelegate: PipelineStepDelegate<TContext>,

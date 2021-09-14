@@ -1,13 +1,13 @@
-# PIPELINE
+# boru
 
-Pipeline implementation in kotlin with native coroutine support and custom dsl.
+boru is a pipeline implementation in kotlin with native coroutine support and custom dsl.
 
 Supports chaining pipeline steps with conditions and branches
 
 ```
 <dependency>
     <groupId>com.trendyol</groupId>
-    <artifactId>pipeline</artifactId>
+    <artifactId>boru</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```

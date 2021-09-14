@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals

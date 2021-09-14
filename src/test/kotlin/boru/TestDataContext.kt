@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 class TestDataContext : PipelineContext {
     override val items: MutableMap<Any, Any> = mutableMapOf()

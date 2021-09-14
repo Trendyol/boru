@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 class PipelineBuilder<TContext : PipelineContext> {
     private val steps: MutableList<Func<PipelineStepDelegate<TContext>, PipelineStepDelegate<TContext>>> = mutableListOf()

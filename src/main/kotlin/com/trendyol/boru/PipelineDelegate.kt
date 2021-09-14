@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 typealias PipelineStepDelegate<TContext> = suspend (TContext) -> Unit
 

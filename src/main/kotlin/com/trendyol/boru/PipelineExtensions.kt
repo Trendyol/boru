@@ -1,4 +1,4 @@
-package com.trendyol.pipeline
+package com.trendyol.boru
 
 suspend fun <TContext : PipelineContext> PipelineBuilder<TContext>.use(step: suspend (TContext, next: suspend () -> Unit) -> Unit): PipelineBuilder<TContext> {
     return this.use { next ->
