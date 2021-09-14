@@ -10,7 +10,7 @@
 
     <name>com.trendyol.boru</name>
     <description>boru is a pipeline implementation in kotlin with native coroutine support and custom dsl.</description>
-    <url>https://github.com/Trendyol/kediatR</url>
+    <url>https://github.com/Trendyol/boru</url>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
