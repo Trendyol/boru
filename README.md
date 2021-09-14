@@ -4,7 +4,10 @@
 
 boru is a pipeline implementation in kotlin with native coroutine support and custom dsl.
 
-Supports chaining pipeline steps with conditions and branches
+Supports chaining pipeline steps with conditions and branches.
+
+Inspired by [@oguzhaneren](https://github.com/oguzhaneren) 's C# implementation
+
 
 ```
 <dependency>
