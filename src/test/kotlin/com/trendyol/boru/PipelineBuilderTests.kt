@@ -26,6 +26,25 @@ class PipelineBuilderTests {
     }
 
     @Test
+    fun `should execute pipeline with dsl builder`() {
+        runBlocking {
+            //given
+            val pipeline = pipelineBuilder<TestDataContext> {
+                usePipelineStep(TestWriterStep("hello"))
+                usePipelineStep(TestWriterStep("hello"))
+            }
+
+            val context = TestDataContext()
+
+            //when
+            pipeline.execute(context)
+
+            //then
+            assertEquals(context.text, "hello")
+        }
+    }
+
+    @Test
     fun `should execute pipeline step with empty next`() {
         runBlocking {
             //given
