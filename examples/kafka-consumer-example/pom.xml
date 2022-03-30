@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent From repository -->
     </parent>
     <groupId>com.trendyol</groupId>
     <artifactId>kafka-consumer-example</artifactId>
