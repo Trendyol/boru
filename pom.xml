@@ -264,7 +264,7 @@
     </build>
 
     <distributionManagement>
-        <!-- Central Repository -->
+        <!-- Central-Repository -->
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
