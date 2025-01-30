@@ -1,3 +1,5 @@
+
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Trendyol/boru/badge)](https://scorecard.dev/viewer/?uri=github.com/Trendyol/boru)
 # boru [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.trendyol/boru/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.trendyol/boru) ![Release boru](https://github.com/Trendyol/boru/actions/workflows/release.yml/badge.svg) [![codecov](https://codecov.io/gh/Trendyol/boru/branch/master/graph/badge.svg?token=lEdQtSi0c5)](https://codecov.io/gh/Trendyol/boru)
 
 ![boru](https://user-images.githubusercontent.com/21153996/133256800-8d51f5e5-1cc5-45d2-a195-28e95f1cb92c.jpeg)
